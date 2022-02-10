@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Team</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <img class="my_photo" src="img/roma.jpg" alt="my photo">
+    <img class="my_photo" src="img/alex.jpg" alt="my photo">
+    <img class="my_photo" src="img/vadum.jpg" alt="my photo">
+
+<div class="modal_bg" id="modal_email">
+    <div class="modal_container">
+        <button class="modal_container_cross_button">
+            <img class="modal_icon_cross" src="img/icons/close-icon.svg" alt="">
+        </button>
+        <img class="modal_icon_letter" src="img/icons/mail-icon.svg" alt="mail_icon">
+        <h4 class="modal_container_title">I will text you in
+            about 1 hour</h4>
+        <form class="modal_container_form" id="modal_email_container" action="#">
+            <div class="modal_container_form_without_button">
+                <label class="modal_container_user_email" for="user_email">Email</label>
+                <input type="email" name="user_email" id="user_email" placeholder="Type your email here">
+                <p class="email_error_text" id="email_error_text">Check your email</p>
+            </div>
+            <input type="submit" value="Send" id="modal_container_button">
+        </form>
+    </div>
+</div>
+
+<div class="modal_bg" id="modal_success">
+    <div class="modal_container modal_container_height">
+        <button class="modal_container_cross_button">
+            <img class="modal_icon_cross" src="img/icons/close-icon.svg" alt="">
+        </button>
+        <p class="modal_container_success_text">Your request was
+            sent to process
+        </p>
+        <img class="modal_icon_tick" src="img/icons/tick-icon.svg" alt="tick">
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
