@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+sweet home for <span th:text="${session.user.name}"></span> ^^<br>
+<a href="allBooks">All books</a>
+<form action="byTitle">
+    <label>
+        by title:
+        <input type="text" name="titleName">
+    </label>
+    <input type="submit" value="find">
+</form>
+<form action="byAuthor">
+    <label>
+        by author:
+        <input type="text" name="authorName">
+    </label>
+    <input type="submit" value="find">
+</form>
+<form action="byKeyWord">
+    <label>
+        by key word:
+        <input type="text" name="keyWordName">
+    </label>
+    <input type="submit" value="find">
+</form>
+<form action="byId">
+    <label>
+        by book id:
+        <input type="text" name="bookId">
+    </label>
+    <input type="submit" value="find">
+</form>
+</body>
+</html>
