@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+<span th:text="${#lists.isEmpty(books) ? 'no books' : 'here your books'}" /> <br>
+<tr th:each="book: ${books}">
+    title: <td th:text="${book.title}" /> <br>
+    author: <td th:text="${book.author}" /> <br>
+    keyWords: <td th:text="${book.keyWords}" /> <br>
+    <div th:if="${session.user.role.name() == 'ADMIN'}">
+        <form action="editBook" method="post">
+            edit current book <br>
+            <label>
+                title name
+                <input type="text" name="titleName">
+            </label>
+            <label>
+                author name
+                <input type="text" name="authorName">
+            </label>
+            <label>
+                key words (separated with space)
+                <input type="text" name="keyWordLine">
+            </label>
+            <input type="hidden" th:value="${book.id}" name="bookId">
+            <input type="submit" value="edit book">
+        </form>
+        <form action="removeBook" method="post">
+            <input type="hidden" th:value="${book.id}" name="bookId">
+            <input type="submit" value="delete">
+        </form>
+    </div> <br>
+</tr>
+<div th:if="${session.user.role.name() == 'ADMIN'}">
+    you are admin
+    <form action="addBook" method="post">
+        add new book <br>
+        <label>
+            title name
+            <input type="text" name="titleName">
+        </label>
+        <label>
+            author name
+            <input type="text" name="authorName">
+        </label>
+        <label>
+            key words (separated with space)
+            <input type="text" name="keyWordLine">
+        </label>
+        <label>
+            id
+            <input type="text" name="bookId">
+        </label>
+        <input type="submit" value="add book">
+    </form>
+</div>
+</body>
+</html>
